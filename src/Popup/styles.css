@@ -27,11 +27,11 @@
     font-size: 20px;
     color: whitesmoke;
     text-align: left;
-    margin: 0.6rem 0 0.5rem 2.5rem
+    margin: 1.3rem 0 0 2.5rem
   }
 
   .modal-image-container {
-    padding:10px;
+    padding:6px 10px 10px 10px;
     text-align: center;
   }
 
@@ -46,7 +46,7 @@
     width: 175px;
     height: 40px;
     border-radius: 10px;
-    background-color: chartreuse;
+    background-color: rgba(252, 181, 89, 0.993);
     border: none;
     font-weight: bold;
     font-size: 18px;
@@ -54,7 +54,7 @@
 
   .modal-button:hover {
     cursor: pointer;
-    box-shadow: 0 0 6px chartreuse;
+    box-shadow: 0 0 8px rgb(252, 189, 106);
   }
 
   .download-link:active,

@@ -1,6 +1,6 @@
 .card-container {
     border-radius: 5px;
-    padding: 5px;
+    padding: 2px;
     cursor: pointer;
     -moz-osx-font-smoothing: grayscale;
     backface-visibility: hidden;

@@ -1,19 +1,14 @@
 import React from 'react'
 import './styles.css'
 
-const Pagination=({ images }) => {
+const Pagination=({ images, pageNum, setPageNum }) => {
     return (
         images && images.length>0 && 
         <div className='pagination'>
-          <span>&laquo;</span>
-          <span className='active'>1</span>
-          <span>2</span>
-          <span>3</span>
-          <span>4</span>
-          <span>&raquo;</span>
-        </div> 
+          <span className='page-button' onClick={pageNum > 1 ? ()=>setPageNum(pageNum-1) : null}>&lang;</span>
+          <span className='page-button' onClick={()=>setPageNum(pageNum+1)}>&rang;</span>
+        </div>
     )
 }
 
 export default Pagination
-

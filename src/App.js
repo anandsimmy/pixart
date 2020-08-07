@@ -11,13 +11,14 @@ import './App.css'
 const App= () => {
 
   const [images, setImages]= useState([])
-  const [keyword, setKeyword]= useState('dogs')
+  const [pageNum, setPageNum]= useState(1)
+  const [keyword, setKeyword]= useState()
   const [modalImage, setModalImage]= useState({})
   const [showModal, changeShowModal]= useState(false)
 
   useEffect(()=>{
-    getImages(keyword, setImages)
-    }, [keyword])
+    getImages(keyword, pageNum, setImages)
+    }, [keyword, pageNum])
 
     const clickHandler=(info) =>{
       changeShowModal(!showModal)
@@ -31,7 +32,7 @@ const App= () => {
           <Logo />
           <Search setKeyword={setKeyword}/>
           <CardList images={images} clickHandler={clickHandler}/>
-          <Pagination images={images} />
+          <Pagination images={images} pageNum={pageNum} setPageNum={setPageNum}/>
         </div>
       </div>
     );
