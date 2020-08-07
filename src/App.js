@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import Unsplash from 'unsplash-js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import CardList from './Card-list/card-list'
+import Search from './search/search'
+import Popup from './Popup/popup'
+import Logo from './Logo/logo'
+import { accessKey } from './config' 
+import './App.css'
+
+
+const App= () => {
+
+  const [images, setImages]= useState(null)
+  const [show, changeShow]= useState(false)
+
+  useEffect(()=>{
+    const unsplash = new Unsplash({ accessKey });
+    unsplash.search.photos("forest", 1, 9, { orientation: "landscape" })
+        .then(data=>data.json())
+        .then(data => {
+          console.log(data.results)
+          setImages(data.results.slice(0,9))
+      });
+    }, [])
+
+    const clickHandler=() =>{
+      changeShow(!show)
+    }
+
+    return (
+      <div>
+        <Popup show={show} clickHandler={clickHandler}/>
+        <div>
+          <Logo />
+          <Search />
+          { images && <CardList images={images} clickHandler={clickHandler}/> }
+        </div>
+      </div>
+    );
 }
+
 
 export default App;

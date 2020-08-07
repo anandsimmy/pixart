@@ -1,0 +1,19 @@
+.card-container {
+    border-radius: 5px;
+    padding: 15px;
+    cursor: pointer;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: transform 0.25s ease-out;
+  }
+
+  .card-image {
+    width: 324px; 
+    height: 180px;
+    border-radius: 10px;
+  }
+  
+  .card-container:hover {
+    transform: scale(1.05);
+  }
