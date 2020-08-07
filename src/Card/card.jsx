@@ -1,10 +1,11 @@
 import React from 'react'
 import './styles.css'
 
-const Card= ({name, url, clickHandler}) => {
+const Card= ({name, id, urls, user, clickHandler}) => {
     return (
-    <div className='card-container' onClick={clickHandler}>
-        <img className='card-image' alt='unsplash' src={url} />
+    //can pass full image using urls.full
+    <div className='card-container' onClick={()=>clickHandler({url: urls.regular, user, id})}>
+        <img className='card-image' alt='unsplash' src={urls.regular} />
         <h2>{name}</h2>
     </div>
     )

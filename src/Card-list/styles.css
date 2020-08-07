@@ -1,7 +1,13 @@
 .card-list{
     width: 75vw;
-    margin: 0 auto;
+    margin: 30px auto 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 5px;
+}
+
+.error-message{
+    margin: 10%;
+    color: red;
+    text-align: center;
 }

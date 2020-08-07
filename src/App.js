@@ -1,44 +1,40 @@
-import React, { useState, useEffect } from 'react';
-import Unsplash from 'unsplash-js';
+import React, { useState, useEffect } from 'react'
 
-import CardList from './Card-list/card-list'
-import Search from './search/search'
-import Popup from './Popup/popup'
-import Logo from './Logo/logo'
-import { accessKey } from './config' 
+import CardList from './Card-list/Card-list'
+import Search from './Search/Search'
+import Popup from './Popup/Popup'
+import Logo from './Logo/Logo'
+import Pagination from './Pagination/Pagination'
+import { getImages } from './api/api'
 import './App.css'
-
 
 const App= () => {
 
-  const [images, setImages]= useState(null)
-  const [show, changeShow]= useState(false)
+  const [images, setImages]= useState([])
+  const [keyword, setKeyword]= useState('dogs')
+  const [modalImage, setModalImage]= useState({})
+  const [showModal, changeShowModal]= useState(false)
 
   useEffect(()=>{
-    const unsplash = new Unsplash({ accessKey });
-    unsplash.search.photos("forest", 1, 9, { orientation: "landscape" })
-        .then(data=>data.json())
-        .then(data => {
-          console.log(data.results)
-          setImages(data.results.slice(0,9))
-      });
-    }, [])
+    getImages(keyword, setImages)
+    }, [keyword])
 
-    const clickHandler=() =>{
-      changeShow(!show)
+    const clickHandler=(info) =>{
+      changeShowModal(!showModal)
+      info && setModalImage(info)
     }
 
     return (
       <div>
-        <Popup show={show} clickHandler={clickHandler}/>
-        <div>
+        <Popup show={showModal} modalImage={modalImage} clickHandler={clickHandler}/>
+        <div className='main-container'>
           <Logo />
-          <Search />
-          { images && <CardList images={images} clickHandler={clickHandler}/> }
+          <Search setKeyword={setKeyword}/>
+          <CardList images={images} clickHandler={clickHandler}/>
+          <Pagination images={images} />
         </div>
       </div>
     );
 }
-
 
 export default App;

@@ -1,0 +1,8 @@
+.logo-container {
+    font-family: 'Pacifico', cursive;
+    display: inline-block;
+    position: fixed;
+    top: -51px;
+    left: 13%;
+    font-size: 46px;
+}

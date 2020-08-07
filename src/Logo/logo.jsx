@@ -1,8 +1,11 @@
 import React from 'react'
+import './styles.css'
 
 const Logo=() => {
     return (
-        <p></p>
+        <div className='logo-container'>
+            <p>Pixart</p>
+        </div>
     )
 } 
 

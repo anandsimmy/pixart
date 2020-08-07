@@ -1,11 +1,11 @@
 .search-container {
     width: 400px;
-    margin: 10px auto;
+    margin: 23px auto;
 }
 
 .search-input {
-    width:90%;
-    height:25px;
+    width:86%;
+    height:33px;
     border: 1px solid grey;
     padding-left: 11px;
     border-radius: 10px;
@@ -17,8 +17,8 @@
 }
 
 .search-icon {
-    font-size: 20px;
-    margin-left: 6px
+    font-size: 28px;
+    margin-left: 10px
 }
 
 .search-icon:active,

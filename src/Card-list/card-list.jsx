@@ -1,18 +1,20 @@
-import React from 'react'
-import Card from '../Card/card'
+import React, { memo } from 'react'
+import Card from '../Card/Card'
 import './styles.css'
 
 const CardList= ({ images, clickHandler }) => {
     return (
-        <div className='card-list'>
-        { images.map(({id, urls}) => (
-            <Card key={id} url={urls.regular} clickHandler={clickHandler} />
-        ))
-        }
-        </div>
+        images ? images.length > 0 ? 
+            <div className='card-list'>
+                { images.map(({id, urls, user}) => (
+                    <Card key={id} id={id} urls={urls} user={user} clickHandler={clickHandler} />
+                ))
+                }
+            </div> : null : 
+        <h2 className='error-message'>Sorry, no images found!</h2>
     )
 }
 
-export default CardList
+export default memo(CardList)
 
  
