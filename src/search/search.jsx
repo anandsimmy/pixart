@@ -21,5 +21,5 @@ const Search= ({ setKeyword }) => {
         </div>
     )
 }
-
+ 
 export default Search
