@@ -6,5 +6,6 @@
     left: 13%;
     font-size: 46px;
     text-decoration: none;
-    color: black
+    color: black;
+    cursor: pointer;
 }

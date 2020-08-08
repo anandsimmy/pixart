@@ -1,41 +1,16 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
-import CardList from './Card-list/Card-list'
-import Search from './Search/Search'
-import Popup from './Popup/Popup'
-import Logo from './Logo/Logo'
-import Pagination from './Pagination/Pagination'
-import { getImages } from './api/api'
-import './App.css'
+import Home from './Home/Home'
 
-const App= () => {
-
-  const [images, setImages]= useState([])
-  const [pageNum, setPageNum]= useState(1)
-  const [keyword, setKeyword]= useState()
-  const [modalImage, setModalImage]= useState({})
-  const [showModal, changeShowModal]= useState(false)
-
-  useEffect(()=>{
-    getImages(keyword, pageNum, setImages)
-    }, [keyword, pageNum])
-
-    const clickHandler=(info) =>{
-      changeShowModal(!showModal)
-      info && setModalImage(info)
-    }
-
-    return (
-      <div>
-        <Popup show={showModal} modalImage={modalImage} clickHandler={clickHandler}/>
-        <div className='main-container'>
-          <Logo />
-          <Search setKeyword={setKeyword}/>
-          <CardList images={images} clickHandler={clickHandler}/>
-          <Pagination images={images} pageNum={pageNum} setPageNum={setPageNum}/>
-        </div>
-      </div>
-    );
-}
+const App= () => (
+  //added routes just for nav-experince
+  <BrowserRouter>
+    <Switch>
+      <Route exact path='/' component={Home}/>
+      <Route exact path='/home' component={Home}/> 
+    </Switch> 
+  </BrowserRouter>
+)
 
 export default App;

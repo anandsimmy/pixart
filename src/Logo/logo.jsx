@@ -1,12 +1,13 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom'
 import './styles.css'
 
-const Logo=() => {
+const Logo=({ history }) => {
     return (
-        <a className='logo-container' href='https://pixart-8e90e.web.app/'>
+        <span className='logo-container' onClick={()=>history.push('/home')}>
             <p>Pixart</p>
-        </a>
+        </span>
     )
 } 
 
-export default Logo
+export default withRouter(Logo)
