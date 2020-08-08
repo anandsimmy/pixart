@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import CardList from '../../Components/Card-list/Card-list'
 import Search from '../../Components/Search/Search'
-import Loadmore from '../../Components/Loadmore/Loadmore'
+import Loadmore from '../../Components/Load-more/Load-more'
 import { setNewImages, loadMoreImages } from '../../redux/actions'
 import { getImages } from '../../api/api'
 import './styles.css'
