@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import './styles.css'
 
-const Search= ({ setKeyword }) => {
+const Search= ({ setKeyword, setPageNum }) => {
 
     const [query, setQuery]= useState('')
 
     const searchImages= () => {
         query && setKeyword(query)
+        setPageNum(1)
         setQuery('')
     }
 

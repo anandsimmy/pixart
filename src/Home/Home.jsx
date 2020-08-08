@@ -30,7 +30,7 @@ const Home= () => {
         <Popup show={showModal} modalImage={modalImage} clickHandler={clickHandler}/>
         <div className='main-container'>
           <Logo />
-          <Search setKeyword={setKeyword}/>
+          <Search setKeyword={setKeyword} setPageNum={setPageNum} />
           <CardList images={images} clickHandler={clickHandler}/>
           <Pagination images={images} pageNum={pageNum} setPageNum={setPageNum}/>
         </div>
