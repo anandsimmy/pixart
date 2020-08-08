@@ -4,9 +4,9 @@ import './styles.css'
 
 const Logo=({ history }) => {
     return (
-        <span className='logo-container' onClick={()=>history.push('/home')}>
+        <a className='logo-container' href='https://pixart-8e90e.web.app/home'>
             <p>Pixart</p>
-        </span>
+        </a>
     )
 } 
 
