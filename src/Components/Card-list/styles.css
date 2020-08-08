@@ -1,10 +1,9 @@
 .card-list{
-    width: 75vw;
-    margin: 30px auto 0 auto;
+    width: 57vw;
+    margin: 55px auto 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 5px;
-    grid-column-gap: 5px;
+    grid-gap: 10px;
 }
 
 .error-message{

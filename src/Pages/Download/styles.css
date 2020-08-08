@@ -1,0 +1,119 @@
+.backdrop {
+    position: fixed;
+    display: block; 
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.modal {
+    position: fixed;
+    display: block;
+    z-index: 200;
+    top: 8%;
+    left: 22%;
+    width: 55%;
+    height: 625px;
+    background: rgba(255, 255, 255, 1);
+    padding: 0.3rem;
+    border-radius: 25px;
+  }
+  
+  .modal-title {
+    font-weight: 300;
+    font-size: 20px;
+    color: whitesmoke;
+    text-align: left;
+    margin: 1.3rem 0 0 2.5rem
+  }
+
+  .modal-image-container {
+    padding:10% 10px 10px 10px;
+    text-align: center;
+  }
+
+  .modal-image{
+    width: 90%;
+    height: 450px;
+  }
+
+  .modal-button {
+    margin-top: 25px;
+    width: 140px;
+    height: 40px;
+    color: white;
+    border-radius: 30px;
+    background-color: #53c1b9;
+    border: none;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .modal-button:hover {
+    cursor: pointer;
+    box-shadow: 0 0 8px #53c1b9;
+  }
+
+  .download-link:active,
+  .download-link:focus,
+  .modal-button:active,
+  .modal-button:focus{
+    outline: none
+  }
+
+  .close-icon-container {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    top: -21px;
+    right: -2%;
+    background-color: rgba(56, 56, 56, 0.993);
+  }
+
+  .close-icon {
+    position: absolute;
+    color: rgb(219, 217, 217);
+    font-size: 30px;
+    font-weight: 200;
+    font-style: normal;
+    right: 14px;
+    top: 3px;
+  }
+
+  .close-icon-container:hover {
+    cursor: pointer;
+  }
+ 
+  .download-user-details {
+    display: inline-block;
+    width: 200px;
+    position: absolute;
+    top: 5%;
+    left: 7%;
+  }
+
+  .download-user-name {
+    position: absolute;
+    color: black;
+    font-weight: 600;
+    left: 44px;
+  }
+
+  .download-user-username {
+    position: absolute;
+    top: 20px;
+    left: 46px;
+    font-size: 12px;
+    color: #4e4e4e;
+    font-weight: normal;
+  }
+
+  .download-user-image {
+    position: absolute;
+    border-radius: 50%;
+    top: 0;
+  }

@@ -6,8 +6,8 @@ const CardList= ({ images, clickHandler }) => {
     return (
         images ? images.length > 0 ? 
             <div className='card-list'>
-                { images.map(({id, urls, user}) => (
-                    <Card key={id} id={id} urls={urls} user={user} clickHandler={clickHandler} />
+                { images.map(({id, ...props}) => (
+                    <Card key={id} id={id} {...props} clickHandler={clickHandler} />
                 ))
                 }
             </div> : null : 

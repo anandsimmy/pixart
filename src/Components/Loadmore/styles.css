@@ -5,19 +5,18 @@
 }
 
 .page-button {
-  margin: 2px 50px 0 0;
-  padding: 0;
+  margin:25px 50px 25px 0;
+  padding: 13px 15px;
+  width: 130px;
+  border-radius: 25px;
   display: inline-block;
   vertical-align: middle;
   text-align: center;
-  color: grey;
-  background-color: rgba(250, 235, 215, 0.3);
-  border: 1px dashed rgba(253, 207, 150, 0.8);
-  font-weight: bold;
-  font-size: 40px;
+  color: white;
+  background-color: #53c1b9;
+  font-size: 15px;
   cursor: pointer;
   text-decoration: none;
-  transition: background-color .3s;
 }
 
 .page-button:nth-of-type(1){
@@ -30,7 +29,5 @@
 
 .page-button:hover {
   cursor: pointer;
-  background-color: rgba(252, 219, 176, 0.3);
-  border: 1px dashed rgba(252, 175, 81, 0.8);
-  box-shadow: 0 0 6px grey;
+  box-shadow: 0 0 6px #53c1b9;
 }

@@ -1,0 +1,40 @@
+.card-container {
+    position: relative;
+    border-radius: 5px;
+    padding: 2px;
+    cursor: pointer;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: transform 0.25s ease-out;
+  }
+
+  .user-details {
+    position: absolute;
+    font-size: 12px;
+    bottom: 15%;
+    left: 66px;
+    color: white;
+    font-weight: bold;
+  }
+
+  .user-image {
+    position: absolute;
+    border-radius: 50%;
+    bottom: -7px;
+    left: -42px;
+  }
+
+  .user-name {
+    color:#53c1b9;
+  }
+
+  .card-image {
+    width: 275px; 
+    height: 170px;
+    border-radius: 10px;
+  }
+  
+  .card-container:hover {
+    transform: scale(1.05);
+  }
