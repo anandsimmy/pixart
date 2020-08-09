@@ -4,11 +4,11 @@ import { connect } from 'react-redux'
 import CardList from '../../Components/Card-list/Card-list'
 import Search from '../../Components/Search/Search'
 import Loadmore from '../../Components/Load-more/Load-more'
-import { setNewImages, loadMoreImages } from '../../redux/actions'
+import { setNewImages } from '../../redux/actions'
 import { getImages } from '../../api/api'
 import './styles.css'
 
-const Home= ({ images, keyword, pageNum, setNewImages, loadMoreImages }) => {
+const Home= ({ images, keyword, pageNum, setNewImages }) => {
 
   useEffect(()=>{
     getImages(keyword, pageNum, setNewImages)
@@ -32,8 +32,7 @@ const mapStateToProps=({ images, keyword, pageNum }) => ({
 })
 
 const mapDispatchToProps=(dispacth) => ({
-  setNewImages: (images) => dispacth(setNewImages(images)),
-  loadMoreImages: (images) => dispacth(loadMoreImages(images))
+  setNewImages: (images) => dispacth(setNewImages(images))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

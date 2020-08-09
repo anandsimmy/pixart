@@ -1,5 +1,3 @@
-import { getImages } from '../api/api'
-
 const initalState={
     images: [],
     keyword: 'puppy',
@@ -13,11 +11,6 @@ const reducer= (state= initalState, action) => {
             return {
                 ...state,
                 images: action.payload
-            }
-        case 'LOAD_MORE_IMAGES':
-            return {
-                ...state,
-                images: [...state.images, ...action.payload]
             }
         case 'LOAD_MORE':
             return {
