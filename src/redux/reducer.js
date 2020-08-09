@@ -1,6 +1,8 @@
+import { getImages } from '../api/api'
+
 const initalState={
     images: [],
-    keyword: 'dogs',
+    keyword: 'puppy',
     pageNum: 1,
     downloadImageInfo: {},
 }
@@ -8,7 +10,6 @@ const initalState={
 const reducer= (state= initalState, action) => {
     switch(action.type){
         case 'SET_NEW_IMAGES':
-            
             return {
                 ...state,
                 images: action.payload

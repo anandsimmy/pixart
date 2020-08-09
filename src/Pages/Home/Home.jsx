@@ -11,13 +11,9 @@ import './styles.css'
 const Home= ({ images, keyword, pageNum, setNewImages, loadMoreImages }) => {
 
   useEffect(()=>{
-    getImages(keyword, 1, setNewImages)
-    }, [keyword])
+    getImages(keyword, pageNum, setNewImages)
+    }, [keyword, pageNum])
   
-  // useEffect(()=>{
-  //   getImages(keyword, pageNum, loadMoreImages)
-  //   }, [pageNum])
-
     return (
       <div>
         <div className='main-container'>
