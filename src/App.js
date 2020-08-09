@@ -2,10 +2,10 @@ import React from 'react'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import reducer from './redux/reducer'
 
 import Home from './Pages/Home/Home'
 import Download from './Pages/Download/Download'
-import reducer from './redux/reducer'
 
 const store=createStore(
   reducer, 
