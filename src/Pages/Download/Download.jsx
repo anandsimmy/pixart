@@ -14,11 +14,11 @@ const Download=({ history, imageInfo: { id, urls, user } }) => {
             user ? <>
             <div className='backdrop'></div>
             <div className='modal'>
-            <span className='download-user-details'>
-                <img alt='user' className='download-user-image' src={user.profile_image.small}></img>
-                <span className='download-user-name'>{user.name}</span>
-                <span className='download-user-username'>@{user.username}</span>
-            </span>
+                <span className='download-user-details'>
+                    <img alt='user' className='download-user-image' src={user.profile_image.small}></img>
+                    <span className='download-user-name'>{user.name}</span>
+                    <span className='download-user-username'>@{user.username}</span>
+                </span>
                 <span className='close-icon-container' onClick={clickHandler}>
                     <i className="close-icon" >X</i>
                 </span>

@@ -5,7 +5,7 @@ import { getImages } from '../../api/api'
 import { loadMoreImages } from '../../redux/actions'
 import './styles.css'
 
-const Loadmore=({ images, keyword, pageNum, loadMoreImages }) => {
+const Loadmore=({ images, keyword, pageNum, loadButtonRef, loadMoreImages }) => {
 
     const loadMore= async()=>{
       console.log(keyword, pageNum)

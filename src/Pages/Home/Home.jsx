@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { connect } from 'react-redux'
 
 import CardList from '../../Components/Card-list/Card-list'
@@ -10,20 +10,28 @@ import './styles.css'
 
 const Home= ({ images, keyword, pageNum, setNewImages }) => {
 
-  useEffect(()=>{
+    const loadButtonRef= useRef(null)
+
+    useEffect(()=>{
     async function fetchData(){
       const fetchedImages= await getImages(keyword, pageNum)
       setNewImages(fetchedImages, keyword)
     }
     images.length===0 && fetchData()
     }, [])
-  
+
+    useEffect(() =>{
+      loadButtonRef.current.scrollIntoView({ behaviour:'instant', block:'end' })
+    }, [images])
+
     return (
       <div>
-        <div className='main-container'>
+        <div className='main-container' >
           <Search />
           <CardList images={images} />
-          <Loadmore images={images} />
+          <div ref={loadButtonRef}>
+            <Loadmore images={images} />
+          </div>
         </div>
       </div>
     );
