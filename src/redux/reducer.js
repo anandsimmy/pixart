@@ -5,28 +5,25 @@ const initalState={
     downloadImageInfo: {},
 }
 
-const reducer= (state= initalState, action) => {
-    switch(action.type){
+const reducer= (state= initalState, { type, payload }) => {
+    switch(type){
         case 'SET_NEW_IMAGES':
             return {
                 ...state,
-                images: action.payload
-            }
-        case 'LOAD_MORE':
-            return {
-                ...state,
-                pageNum: state.pageNum+1
-            }
-        case 'SET_KEYWORD':
-            return {
-                ...state,
-                keyword: action.payload,
+                images: payload.images,
+                keyword: payload.keyword,
                 pageNum: 1
+            }
+        case 'LOAD_MORE_IMAGES':
+            return {
+                ...state,
+                images: [...state.images, ...payload],
+                pageNum: state.pageNum+1
             }
         case 'SET_DOWNLOADIMAGE_INFO':
             return {
                 ...state,
-                downloadImageInfo: action.payload
+                downloadImageInfo: payload
             }
         default:
             return  {

@@ -3,13 +3,11 @@ import { accessKey } from '../config'
 
 const unsplash = new Unsplash({ accessKey });
 
-export const getImages= (query, pageNum, setImages) => {
-    unsplash.search.photos(query, pageNum, 9, { orientation: "landscape" })
-        .then(data=>data.json())
-        .then(data => {
-            console.log(data)
-            data.results.length!==0 ? setImages(data.results.slice(0,9)) : setImages(null)
-      });
+export const getImages= async (keyword, pageNum) => {
+    let data= await unsplash.search.photos(keyword, pageNum, 9, { orientation: "landscape" })
+    data= await data.json()
+    console.log(data)
+    return data.results.length!==0 ? data.results.slice(0,9) : null
 }
 
 

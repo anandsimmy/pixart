@@ -7,7 +7,7 @@ const Download=({ history, imageInfo: { id, urls, user } }) => {
     const downloadLink= `https://unsplash.com/photos/${id}/download?force=true`
 
     const clickHandler=() => {
-        history.push('/')
+        history.goBack()
     }
 
     return  (

@@ -11,8 +11,12 @@ import './styles.css'
 const Home= ({ images, keyword, pageNum, setNewImages }) => {
 
   useEffect(()=>{
-    getImages(keyword, pageNum, setNewImages)
-    }, [keyword, pageNum])
+    async function fetchData(){
+      const fetchedImages= await getImages(keyword, pageNum)
+      setNewImages(fetchedImages, keyword)
+    }
+    images.length===0 && fetchData()
+    }, [])
   
     return (
       <div>
@@ -32,7 +36,7 @@ const mapStateToProps=({ images, keyword, pageNum }) => ({
 })
 
 const mapDispatchToProps=(dispacth) => ({
-  setNewImages: (images) => dispacth(setNewImages(images))
+  setNewImages: (images, keyword) => dispacth(setNewImages(images, keyword))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import { setKeyword } from '../../redux/actions'
+
+import { getImages } from '../../api/api'
+import { setNewImages } from '../../redux/actions'
 import './styles.css'
 
-const Search= ({ setKeyword }) => {
+const Search= ({ setNewImages }) => {
 
     const [query, setQuery]= useState('')
 
-    const searchImages= () => {
-        query && setKeyword(query)
+    const searchImages= async() => {
+        const images= await getImages(query, 1)
+        setNewImages(images, query)
         setQuery('')
     }
 
@@ -27,7 +30,7 @@ const Search= ({ setKeyword }) => {
 }
  
 const mapDispatchToProps=(dispatch) => ({
-    setKeyword: (keyword) => dispatch(setKeyword(keyword))
+    setNewImages: (images, query) => dispatch(setNewImages(images, query))
 })
 
 export default connect(null, mapDispatchToProps)(Search)
