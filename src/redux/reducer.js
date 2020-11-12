@@ -1,6 +1,6 @@
 const initalState={
     images: [],
-    keyword: 'puppy',
+    keyword: 'landscape',
     pageNum: 1,
     downloadImageInfo: {},
 }
